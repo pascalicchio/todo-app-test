@@ -1,0 +1,30 @@
+body {
+    background-color: gray;
+}
+
+h1 {
+    color: blue;
+}
+
+h2,
+h3 {
+    color: pink;
+}
+
+form {
+    padding: 10px;
+    border: 1px black solid;
+    background-color: #fff;
+}
+
+button {
+    background-color: tomato;
+}
+
+input {
+    width: 300px;
+}
+
+ul {
+    line-height: 40px;
+}

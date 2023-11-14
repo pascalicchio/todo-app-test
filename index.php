@@ -24,18 +24,7 @@
     <h2>Tasks for today, <?php echo date('m-d-Y'); ?></h2>
 
     <?php
-    // connecting to the database
-    $localserver = '127.0.0.1';
-    $username = 'root';
-    $password = '';
-    $database = 'todo';
-
-    $conn = new mysqli($localserver, $username, $password, $database);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include 'connection.php';
 
     $content = $conn->query('SELECT * FROM tasks');
     ?>

@@ -20,14 +20,14 @@
 <body>
 
     <!-- study here how html structure works -->
-    <h1>Todo List</h1>
+    <h1>Todo List Caiden </h1> 
     <h2>Tasks for today, <?php echo date('m-d-Y'); ?></h2>
 
     <?php
     // connecting to the database
-    $localserver = 'localhost';
+    $localserver = '127.0.0.1';
     $username = 'root';
-    $password = 'every1000';
+    $password = '';
     $database = 'todo';
 
     $conn = new mysqli($localserver, $username, $password, $database);

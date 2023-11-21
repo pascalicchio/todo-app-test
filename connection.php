@@ -1,13 +1,16 @@
 <?php
-// connecting to the database
-$localserver = '127.0.0.1';
-$username = 'root';
-$password = '';
-$database = 'todo';
 
-$conn = new mysqli($localserver, $username, $password, $database);
+require 'vendor/autoload.php'; // Load Composer autoloader
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Connect to PlanetScale using credentials stored in environment variables
+$conn = mysqli_init();
+$conn->ssl_set(NULL, NULL, "/etc/ssl/cert.pem", NULL, NULL);
+$conn->real_connect('us-east.connect.psdb.cloud', '5xxc7i38svk7qo601u7a', 'pscale_pw_bdSJVAUqS7dJOmf6WHb7ktAfaaXhNkwDA43Kn3oM0Vx', 'test');
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($conn->connect_errno) {
+    echo "Failed to connect to MySQL: " . $conn->connect_error;
+    exit();
 }
